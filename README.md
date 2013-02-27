@@ -9,7 +9,7 @@ This is an example project demonstrating the basics of Spring MVC, Hibernate and
 
 ```
 $ cd ${BASE_DIRECTORY}/spring-mvc-demo
-$ clean test jetty:stop jetty:run
+$ mvn clean test jetty:stop jetty:run
 ```
 
 Launch the project at http://localhost:8080/spring-mvc-demo/
