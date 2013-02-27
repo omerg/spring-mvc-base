@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Account Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<!-- Bootstrap -->
+<link href="css/style.css" rel="stylesheet" media="screen">
+</head>
+<body>
+	<div class="container">
+		<h1>Demo App</h1>
+		<fieldset>
+			<legend>Accounts</legend>
+			<div id="account-template-area">
+				<table class="table table-striped">
+					<thead>
+						 
+						<tr>
+							 
+							<th>   <lablel>Username</lablel>  </th>  
+							<th>   <lablel>Name</lablel>  </th>  
+							<th>   <lablel>Surname</lablel>  </th>
+							<th>   <lablel>Phone Number</lablel>  </th>
+							<th>   <lablel>Actions</lablel>  </th>
+						</tr>
+					</thead>
+					<tbody id="account-table-body"></tbody>
+					<script id="account-table-body-template" type="text/template"">
+						 {{#accountList}}
+						<tr>
+							 
+							<td id="username">   {{username}}  </td>  
+							<td>   {{name}}  </td>  
+							<td>   {{surname}}  </td>
+							<td>   {{phoneNumber}}  </td>
+							<td>
+								<div class="btn-group">
+									<button class="btn btn-inverse dropdown-toggle"
+										data-toggle="dropdown">
+										Actions <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+										<li><a class="modal-edit" data-target="#modal-edit" 
+											data-toggle="modal" data-username="{{username}}">Edit</a></li>
+										<li><a class="modal-delete" data-target="#modal-delete" 
+											data-toggle="modal" data-username="{{username}}">Delete</a></li>
+									</ul>
+								</div>
+							</td>
+
+						</tr>
+						 {{/accountList}}
+					</script>
+					</div>
+				</table>
+			</div>
+			<fieldset>
+
+				<div class="btn-group pull-right">
+					<input type="hidden" id="active-page" name="active-page" value="1" />
+					<a class="btn" id="previous-button">Previous</a>
+					<script id="page-num-template" type="text/template"">{{rowCount}}</script>
+					<button class="btn" id="active-page-field"></button>
+					<button class="btn" id="next-button">Next</button>
+				</div>
+				<a data-target="#modal-add" data-toggle="modal"
+					class="btn btn-primary"> Add New Account </a>
+	</div>
+
+	<!-- PopUp's -->
+	<div class="modal hide fade" id="modal-add">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal">&times;</a>
+			<h3>Add New Account</h3>
+		</div>
+		<form id="add-account-form" class="form-horizontal">
+			<div class="modal-body">
+				<div id="add-success-alert" class="alert alert-success hide">Account
+					Created.</div>
+				<div id="add-fail-alert" class="alert alert-fail hide"></div>
+				<div id="add-form-content">
+					<div class="control-group">
+						<label class="control-label" for="inputUsername">Username</label>
+						<div class="controls">
+							<input type="text" id="add-inputUsername" name="username"
+								placeholder="Username">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputName">Name</label>
+						<div class="controls">
+							<input type="text" id="add-inputName" name="name"
+								placeholder="Name">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputSurname">Surname</label>
+						<div class="controls">
+							<input type="text" id="add-inputSurname" name="surname"
+								placeholder="Surname">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputTelephoneNumber">Telephone
+							Number</label>
+						<div class="controls">
+							<input type="text" data-mask="999-999-99-99" id="add-inputTelephoneNumber"
+								name="telephoneNumber" placeholder="Telephone Number">
+						</div>
+					</div>
+					<div id="add-captcha-group" class="control-group">
+						<div class="controls">
+							<i id="captcha-refresh" class="icon-refresh"></i> <img
+								id="add-captcha-image" src="/spring-mvc-demo/captcha/getImage">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="add-inputCaptcha">Captcha
+							Text</label>
+						<div class="controls">
+							<input type="text" id="add-inputCaptcha" name="inputCaptcha"
+								placeholder="Captcha">
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button id="add-close-button" class="btn" data-dismiss="modal"
+					type="reset">Close</button>
+				<button id="add-button" type="submit" class="btn btn-primary"
+					data-loading-text="Loading..." data-complete-text="Add Another"
+					data-retry-text="Retry">Save Change</button>
+			</div>
+		</form>
+
+	</div>
+
+	<div class="modal hide fade" id="modal-edit">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal">&times;</a>
+			<h3>Edit Account</h3>
+		</div>
+		<form id="edit-account-form" class="form-horizontal">
+			<div class="modal-body">
+				<div id="edit-success-alert" class="alert alert-success hide">Account
+					Edited.</div>
+				<div id="edit-fail-alert" class="alert alert-fail hide"></div>
+				<div id="edit-form-content">
+					<div class="control-group">
+						<label class="control-label" for="inputUsername">Username</label>
+						<div class="controls">
+							<input type="text" id="edit-inputUsername" name="username"
+								disabled placeholder="Username">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputName">Name</label>
+						<div class="controls">
+							<input type="text" id="edit-inputName" name="name"
+								placeholder="Name">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputSurname">Surname</label>
+						<div class="controls">
+							<input type="text" id="edit-inputSurname" name="surname"
+								placeholder="Surname">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="inputTelephoneNumber">Telephone
+							Number</label>
+						<div class="controls">
+							<input type="text" data-mask="999-999-99-99" id="edit-inputTelephoneNumber"
+								name="telephoneNumber" placeholder="Telephone Number">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button id="edit-close-button" class="btn" data-dismiss="modal"
+					type="reset">Close</button>
+				<button id="edit-button" type="submit" class="btn btn-primary"
+					data-loading-text="Loading..." data-complete-text="Edit Again"
+					data-retry-text="Retry">Save Change</button>
+			</div>
+		</form>
+
+	</div>
+	<div class="modal hide fade" id="modal-delete">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal">&times;</a>
+			<h3>Delete Account</h3>
+		</div>
+		<div class="modal-body">
+			<div id="delete-info-alert" class="alert alert-info">Delete
+				operation needs approval.</div>
+			<div id="delete-success-alert" class="alert alert-success hide">Account
+				Deleted.</div>
+			<div id="delete-fail-alert" class="alert alert-fail hide"></div>
+		</div>
+		<div class="modal-footer">
+			<button id="delete-lose-button" class="btn" data-dismiss="modal"
+				type="reset">Close</button>
+			<button id="delete-button" type="submit" class="btn btn-primary"
+				data-loading-text="Loading..." data-retry-text="Retry"
+				data-default-text="Delete">Delete</button>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/bootstrap-inputmask.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/mustache.js"></script>
+	<script src="js/home.js"></script>
+</body>
+
+</html>
