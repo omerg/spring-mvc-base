@@ -1,6 +1,8 @@
-package com.obss.model;
+package com.obss.model.response;
 
 import java.util.List;
+
+import com.obss.model.Account;
 
 public class ResponseAccountList {
 	

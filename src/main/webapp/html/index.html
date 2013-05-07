@@ -16,11 +16,16 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>   <label>Username</label>  </th>
-							<th>   <label>Name</label>  </th>
-							<th>   <label>Surname</label>  </th>
-							<th>   <label>Phone Number</label>  </th>
-							<th>   <label>Actions</label>  </th>
+							<th>   <label>Username</label>  
+							</th>
+							<th>   <label>Name</label>  
+							</th>
+							<th>   <label>Surname</label>  
+							</th>
+							<th>   <label>Phone Number</label>  
+							</th>
+							<th>   <label>Actions</label>  
+							</th>
 						</tr>
 					</thead>
 					<tbody id="account-table-body"></tbody>
@@ -52,17 +57,20 @@
 					</script>
 				</table>
 			</div>
-			</fieldset>
+		</fieldset>
 
-				<div class="btn-group pull-right">
-					<input type="hidden" id="active-page" name="active-page" value="1" />
-					<a class="btn" id="previous-button">Previous</a>
-					<script id="page-num-template" type="text/template"">{{rowCount}}</script>
-					<button class="btn" id="active-page-field"></button>
-					<button class="btn" id="next-button">Next</button>
-				</div>
-				<a data-target="#modal-add" data-toggle="modal"
-					class="btn btn-primary"> Add New Account </a>
+		<div class="btn-group pull-right">
+			<input type="hidden" id="active-page" name="active-page" value="1" />
+			<a class="btn" id="previous-button">Previous</a>
+			<script id="page-num-template" type="text/template"">{{rowCount}}</script>
+			<button class="btn" id="active-page-field"></button>
+			<button class="btn" id="next-button">Next</button>
+		</div>
+		<a data-target="#modal-add" data-toggle="modal"
+			class="btn btn-primary"> Add New Account </a> 
+			
+		<a href="stocks" class="btn btn-primary"> Financial Data Page </a>
+
 	</div>
 
 	<!-- PopUp's -->
@@ -102,8 +110,9 @@
 						<label class="control-label" for="inputTelephoneNumber">Telephone
 							Number</label>
 						<div class="controls">
-							<input type="text" data-mask="999-999-99-99" id="add-inputTelephoneNumber"
-								name="telephoneNumber" placeholder="Telephone Number">
+							<input type="text" data-mask="999-999-99-99"
+								id="add-inputTelephoneNumber" name="telephoneNumber"
+								placeholder="Telephone Number">
 						</div>
 					</div>
 					<div id="add-captcha-group" class="control-group">
@@ -170,8 +179,9 @@
 						<label class="control-label" for="inputTelephoneNumber">Telephone
 							Number</label>
 						<div class="controls">
-							<input type="text" data-mask="999-999-99-99" id="edit-inputTelephoneNumber"
-								name="telephoneNumber" placeholder="Telephone Number">
+							<input type="text" data-mask="999-999-99-99"
+								id="edit-inputTelephoneNumber" name="telephoneNumber"
+								placeholder="Telephone Number">
 						</div>
 					</div>
 				</div>

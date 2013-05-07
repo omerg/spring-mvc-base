@@ -1,4 +1,6 @@
-package com.obss.model;
+package com.obss.model.response;
+
+import com.obss.model.Account;
 
 public class ResponseAccount {
 

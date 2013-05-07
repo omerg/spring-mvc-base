@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.obss.dao.AccountDao;
 import com.obss.model.Account;
-import com.obss.model.ResponseAccount;
-import com.obss.model.ResponseAccountList;
+import com.obss.model.response.ResponseAccount;
+import com.obss.model.response.ResponseAccountList;
 
 /**
  * 

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.obss.model.Account;
-import com.obss.model.ResponseAccountList;
+import com.obss.model.response.ResponseAccountList;
 import com.obss.service.AccountService;
 import com.obss.util.ServiceDispatcher;
 
@@ -30,7 +30,7 @@ public class HomeController {
 		logger.debug("Homepage requested");
 
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("home");
+		modelAndView.setViewName("index");
 
 		// add sample data
 		List<Account> accountList = new ArrayList<Account>();

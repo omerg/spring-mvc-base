@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.obss.model.Account;
-import com.obss.model.ResponseAccount;
-import com.obss.model.ResponseAccountList;
+import com.obss.model.response.ResponseAccount;
+import com.obss.model.response.ResponseAccountList;
 import com.obss.service.AccountService;
 import com.octo.captcha.service.image.ImageCaptchaService;
 

@@ -29,6 +29,7 @@
 		<captchaVersion>1.0-RC4</captchaVersion>
 		<jacksonVersion>1.7.1</jacksonVersion>
 		<easyMockVersion>3.1</easyMockVersion>
+		<joddVersion>3.4.3</joddVersion>
 
 		<!-- Encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -149,12 +150,43 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.1</version>
 			<scope>provided</scope>
+		</dependency>
+
+		<!-- Jodd & Jerry -->
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-lagarto</artifactId>
+			<version>${joddVersion}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-db</artifactId>
+			<version>${joddVersion}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-vtor</artifactId>
+			<version>${joddVersion}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-petite</artifactId>
+			<version>${joddVersion}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.jodd</groupId>
+			<artifactId>jodd-madvoc</artifactId>
+			<version>3.4.3</version>
 		</dependency>
 
 	</dependencies>
@@ -172,7 +204,7 @@
 	<build>
 
 		<finalName>spring-mvc-demo</finalName>
-		
+
 		<plugins>
 
 			<plugin>

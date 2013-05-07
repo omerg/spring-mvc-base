@@ -15,8 +15,7 @@ import com.obss.config.DaoConfiguration;
 import com.obss.config.ServiceConfiguration;
 import com.obss.dao.AccountDao;
 import com.obss.model.Account;
-import com.obss.model.ResponseAccount;
-import com.obss.service.AccountService;
+import com.obss.model.response.ResponseAccount;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {ServiceConfiguration.class, DaoConfiguration.class})
