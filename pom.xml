@@ -174,16 +174,6 @@
 		<finalName>spring-mvc-demo</finalName>
 		
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${compilerPluginVersion}</version>
-				<configuration>
-					<source>${javaVersion}</source>
-					<target>${javaVersion}</target>
-					<debug>true</debug>
-				</configuration>
-			</plugin>
 
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>

@@ -15,7 +15,7 @@ public class SessionListener implements HttpSessionListener {
 
 	protected static Logger logger = Logger.getLogger("sessionListener");
 
-	@Override
+
 	public void sessionCreated(HttpSessionEvent arg0) {
 		
 		HibernateUtil.turnOn();
@@ -24,7 +24,7 @@ public class SessionListener implements HttpSessionListener {
 
 	}
 
-	@Override
+
 	public void sessionDestroyed(HttpSessionEvent arg0) {
 
 		HibernateUtil.shutdown();
