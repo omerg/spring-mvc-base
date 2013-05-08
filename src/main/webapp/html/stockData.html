@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Account Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<!-- Bootstrap -->
+<link href="css/style.css" rel="stylesheet" media="screen">
+<link href="css/kendo.common.min.css" rel="stylesheet">
+<link href="css/kendo.default.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<h1>Demo App</h1>
+		<div id="grid"></div>
+		<fieldset>
+			<legend>Gedik Stocks</legend>
+			<div id="account-template-area">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>   <label>StockName</label>  
+							</th>
+							<th>   <label>StockPrice</label>  
+							</th>
+							<th>   <label>Volume</label>  
+							</th>
+							<th>   <label>HighestPrice</label>  
+							</th>
+							<th>   <label>LowestPrice</label>  
+							</th>
+						</tr>
+					</thead>
+					<tbody id="account-table-body"></tbody>
+					<script id="account-table-body-template" type="text/template"">
+						 {{#gedikStockList}}
+						<tr>
+							 
+							<td id="username">   {{stockName}}  </td>  
+							<td>   {{stockPrice}}  </td>  
+							<td>   {{volume}}  </td>
+							<td>   {{highestPrice}}  </td>
+							<td>   {{lowestPrice}}  </td>
+
+						</tr>
+						 {{/gedikStockList}}
+					</script>
+				</table>
+			</div>
+		</fieldset>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/bootstrap-inputmask.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/mustache.js"></script>
+	<script src="js/kendo.web.js"></script>
+	<script src="js/stock.js"></script>
+</body>
+
+</html>

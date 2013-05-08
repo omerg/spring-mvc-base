@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.obss.model.Account;
 import com.obss.model.response.ResponseAccount;
 import com.obss.model.response.ResponseAccountList;
+import com.obss.model.response.ResponseGedikStockList;
 import com.obss.service.AccountService;
+import com.obss.service.GedikStockService;
 import com.octo.captcha.service.image.ImageCaptchaService;
 
 /**
@@ -42,6 +44,14 @@ public class AjaxController {
 	public void setCaptchaService(ImageCaptchaService captchaService) {
 		this.captchaService = captchaService;
 	}
+	
+	@Autowired
+	private GedikStockService gedikStockService;
+	
+	public void setGedikStockService(GedikStockService gedikStockService) {
+		this.gedikStockService = gedikStockService;
+	}
+
 
 	/**
 	 * Handles request for saving / updating account
@@ -150,6 +160,26 @@ public class AjaxController {
 		ResponseAccount acconut = accountService.getAccountByUsername(username);
 
 		return acconut;
+
+	}
+	
+	/**
+	 * Handles request for listing accounts
+	 */
+	@RequestMapping(value = "/listGedikStocks", method = RequestMethod.GET)
+	public @ResponseBody
+	ResponseGedikStockList listGedikStocks(
+			HttpServletResponse response) {
+		logger.debug("Received request to list gedik stocks");
+		
+		ResponseGedikStockList gedikStockList = null;
+		try {
+			gedikStockList = gedikStockService.getAllStocks();
+		} catch (IOException e) {
+			logger.error(e.getMessage());
+			e.printStackTrace();
+		}
+		return gedikStockList;
 
 	}
 }
