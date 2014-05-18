@@ -3,7 +3,7 @@ This is an example project demonstrating the basics of Spring MVC, Hibernate and
 # Getting started
 
 * Fork this project
-* Update your running MySql Databse with the SQL script provided under src/webapp/resources/sql
+* Update your running MySql Database with the SQL script provided under conf/sql
 
 # Running the project
 

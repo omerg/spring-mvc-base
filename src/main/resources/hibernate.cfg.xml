@@ -13,6 +13,6 @@
 
 
 		<!-- Resource Mappings -->
-		<mapping resource="com/obss/model/Account.hbm.xml"></mapping>
+		<mapping resource="tr/com/lucidcode/model/Account.hbm.xml"></mapping>
 	</session-factory>
 </hibernate-configuration>

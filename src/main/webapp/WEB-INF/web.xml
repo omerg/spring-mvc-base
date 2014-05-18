@@ -21,7 +21,7 @@
 		</init-param>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>com.obss</param-value>
+			<param-value>tr.com.lucidcode</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
